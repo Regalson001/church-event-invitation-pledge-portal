@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A community event invitation, RSVP and pledge portal."
+    >
+
+    <title>Gather & Give | Community Event</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="brand" href="#home">
+        gather<span>&</span>give
+    </a>
+
+    <nav class="navigation" aria-label="Main navigation">
+        <a href="#event">The Event</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#pledge">Make a Pledge</a>
+
+        <button class="admin-button" id="openAdmin">
+            Organizer
+        </button>
+    </nav>
+</header>
+
+<main id="home">
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                COMMUNITY · FAITH · GENEROSITY
+            </p>
+
+            <h1>
+                Come together.<br>
+                <em>Make a difference.</em>
+            </h1>
+
+            <p class="hero-description">
+                You are warmly invited to a special community celebration.
+                Join us for a meaningful day of connection, gratitude,
+                fellowship and giving.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#rsvp" class="primary-button">
+                    Reserve your place <span>↗</span>
+                </a>
+
+                <a href="#event" class="secondary-link">
+                    Discover the event
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong id="attendeeCount">—</strong>
+                    <span>Expected attendees</span>
+                </div>
+
+                <div>
+                    <strong id="pledgeTotal">—</strong>
+                    <span>Total pledged</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-art" aria-label="Decorative event artwork">
+            <div class="art-sun"></div>
+
+            <div class="art-message">
+                ONE COMMUNITY<br>
+                <span>ONE PURPOSE</span>
+            </div>
+
+            <div class="art-footer">
+                GATHER WITH PURPOSE · GIVE WITH JOY
+            </div>
+        </div>
+    </section>
+
+    <section class="event-details" id="event">
+        <div>
+            <span>DATE</span>
+            <strong>Saturday, 20 December 2026</strong>
+        </div>
+
+        <div>
+            <span>TIME</span>
+            <strong>10:00 AM – 4:00 PM</strong>
+        </div>
+
+        <div>
+            <span>VENUE</span>
+            <strong>Community Fellowship Hall</strong>
+        </div>
+
+        <div>
+            <span>THEME</span>
+            <strong>Growing Together</strong>
+        </div>
+    </section>
+
+    <section class="introduction section-container">
+        <div>
+            <p class="eyebrow">THE GATHERING</p>
+
+            <h2>
+                A moment to connect.<br>
+                <em>A chance to uplift.</em>
+            </h2>
+        </div>
+
+        <p>
+            Spend the day in fellowship, celebration and shared purpose.
+            Whether you are joining us for the first time or returning
+            as part of the community, your presence matters.
+        </p>
+    </section>
+
+    <section class="forms-section">
+
+        <article class="form-card" id="rsvp">
+
+            <p class="eyebrow">01 / SAVE YOUR SEAT</p>
+
+            <h2>Will you join us?</h2>
+
+            <p class="form-description">
+                Let us know you are coming so we can prepare to welcome you.
+            </p>
+
+            <form id="rsvpForm">
+
+                <label for="rsvpName">Full name</label>
+                <input
+                    id="rsvpName"
+                    name="full_name"
+                    type="text"
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="Your full name"
+                    required
+                >
+
+                <label for="rsvpEmail">Email address</label>
+                <input
+                    id="rsvpEmail"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <div class="form-row">
+
+                    <div>
+                        <label for="rsvpPhone">Phone number</label>
+                        <input
+                            id="rsvpPhone"
+                            name="phone"
+                            type="tel"
+                            maxlength="40"
+                            placeholder="+254..."
+                        >
+                    </div>
+
+                    <div>
+                        <label for="guestCount">Number of guests</label>
+                        <input
+                            id="guestCount"
+                            name="guests"
+                            type="number"
+                            min="1"
+                            max="20"
+                            value="1"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <label for="attendance">Attendance response</label>
+
+                <select id="attendance" name="attendance">
+                    <option value="Attending">I will attend</option>
+                    <option value="Maybe">I might attend</option>
+                    <option value="Not attending">Unable to attend</option>
+                </select>
+
+                <label for="rsvpMessage">Message (optional)</label>
+
+                <textarea
+                    id="rsvpMessage"
+                    name="message"
+                    rows="3"
+                    maxlength="1000"
+                    placeholder="Write a message to the organizers..."
+                ></textarea>
+
+                <button class="primary-button full-button" type="submit">
+                    Submit RSVP <span>↗</span>
+                </button>
+
+                <p class="form-feedback" id="rsvpFeedback" aria-live="polite"></p>
+
+            </form>
+        </article>
+
+        <article class="form-card pledge-card" id="pledge">
+
+            <p class="eyebrow">02 / GIVE WITH PURPOSE</p>
+
+            <h2>Make a pledge.</h2>
+
+            <p class="form-description">
+                Record a contribution commitment to support the event
+                and its community mission.
+            </p>
+
+            <form id="pledgeForm">
+
+                <label for="pledgeName">Full name</label>
+
+                <input
+                    id="pledgeName"
+                    name="full_name"
+                    type="text"
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="Your full name"
+                    required
+                >
+
+                <label for="pledgeEmail">Email address</label>
+
+                <input
+                    id="pledgeEmail"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                >
+
+                <div class="form-row">
+
+                    <div>
+                        <label for="pledgeAmount">Pledge amount</label>
+
+                        <input
+                            id="pledgeAmount"
+                            name="amount"
+                            type="number"
+                            min="1"
+                            step="0.01"
+                            placeholder="5000"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="currency">Currency</label>
+
+                        <select id="currency" name="currency">
+                            <option value="KES">KES</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <label for="purpose">Contribution purpose</label>
+
+                <select id="purpose" name="purpose">
+                    <option>General contribution</option>
+                    <option>Venue and logistics</option>
+                    <option>Community outreach</option>
+                    <option>Food and hospitality</option>
+                </select>
+
+                <button class="primary-button full-button" type="submit">
+                    Record my pledge <span>↗</span>
+                </button>
+
+                <p class="form-feedback" id="pledgeFeedback" aria-live="polite"></p>
+
+            </form>
+
+            <p class="notice">
+                This portal records pledge commitments only.
+                It does not process or collect payments.
+            </p>
+
+        </article>
+
+    </section>
+
+    <section class="closing-section">
+        <p class="eyebrow">WE LOOK FORWARD TO SEEING YOU</p>
+
+        <h2>
+            Good things happen<br>
+            <em>when we gather.</em>
+        </h2>
+
+        <a href="#rsvp" class="primary-button">
+            Count me in <span>↗</span>
+        </a>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <a class="brand" href="#home">
+        gather<span>&</span>give
+    </a>
+
+    <p>
+        Community, connection and generosity.
+        © 2026
+    </p>
+</footer>
+
+<!-- Organizer dashboard modal -->
+
+<div class="modal hidden" id="adminModal">
+
+    <div class="modal-panel">
+
+        <button
+            class="modal-close"
+            id="closeAdmin"
+            aria-label="Close dashboard"
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">ORGANIZER ACCESS</p>
+
+        <h2>Event dashboard</h2>
+
+        <label for="adminKey">Admin access key</label>
+
+        <input
+            id="adminKey"
+            type="password"
+            placeholder="Enter your admin key"
+        >
+
+        <button class="primary-button full-button" id="loadDashboard">
+            Open dashboard
+        </button>
+
+        <p id="adminFeedback" class="form-feedback" aria-live="polite"></p>
+
+        <div id="dashboardContent" class="hidden">
+
+            <div class="dashboard-actions">
+                <button class="admin-button" id="exportRsvps">
+                    Export RSVPs CSV
+                </button>
+
+                <button class="admin-button" id="exportPledges">
+                    Export pledges CSV
+                </button>
+            </div>
+
+            <h3>Guest RSVPs</h3>
+            <div id="rsvpTable" class="table-container"></div>
+
+            <h3>Pledge records</h3>
+            <div id="pledgeTable" class="table-container"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
